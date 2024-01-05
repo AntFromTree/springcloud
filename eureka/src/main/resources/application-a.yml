@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: spring-cloud-eureka-server
+# Eureka配置
+eureka:
+  instance:
+    hostname: EurekaServerA  # Eureka实例名称
+  client:
+    # 是否是客户端，是否注册自己，默认都是true这里我们选择false就是自己是注册中心
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      #监控页面，这里改成我们自己定义的
+      defaultZone: http://EurekaServerB:8762/eureka

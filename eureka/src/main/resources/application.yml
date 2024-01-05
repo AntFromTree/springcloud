@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+
+# Eureka配置
+eureka:
+  instance:
+    hostname: localhost  # Eureka实例名称
+  client:
+    # 是否是客户端，是否注册自己，默认都是true这里我们选择false就是自己是注册中心
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      #监控页面，这里改成我们自己定义的
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

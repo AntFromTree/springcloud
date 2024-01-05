@@ -1,0 +1,23 @@
+server:
+  port: 7070
+spring:
+  application:
+    name: user
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+feign:
+  circuitbreaker:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            # 接口超时时间3s
+            timeoutInMilliseconds: 3000
